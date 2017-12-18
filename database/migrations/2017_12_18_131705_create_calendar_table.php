@@ -13,7 +13,7 @@ class CreateCalendarTable extends Migration
      */
     public function up()
     {
-        Schema::create('calendar', function (Blueprint $table) {
+        Schema::create('calendars', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->dateTime('date_calendar');
@@ -23,12 +23,6 @@ class CreateCalendarTable extends Migration
     }
 
     /**
-    *
-    *-id (link user)
--id
--day
--content 
-
      * Reverse the migrations.
      *
      * @return void

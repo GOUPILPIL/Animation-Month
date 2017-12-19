@@ -15,13 +15,13 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        // récupérer toutes les infos de la bdd correspondant à user_id
         $calendars = [];
         if( Auth::check() )
         {
+            // récupérer toutes les infos de la bdd correspondant à user_id
             $calendars = Calendar::where('user_id', Auth::id())->get();
-            //retourne un tableau d'objet comme le fetch objet
         }
+        //retourne un tableau d'objet comme le fetch objet
         return view('day', ['calendars' => $calendars]);
     }
 

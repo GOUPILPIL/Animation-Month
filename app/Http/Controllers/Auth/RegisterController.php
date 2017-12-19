@@ -69,14 +69,18 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        for($i = 1; $i <= 24; $i++) {
+        $facts = file_get_contents('https://www.chucknorrisfacts.fr/api/get?data=nb:24;tri:alea');
+        $facts = json_decode($facts);
+
+        $i = 1;
+        foreach($facts as $fact) {
             Calendar::create([
                 'user_id' => $user->id,
                 'date_calendar' => $i,
-                'content' => 'ceci est le contenu'
+                'content' => $fact->fact
             ]);
+            $i++;
         }
-
         return $user;
     }
 }

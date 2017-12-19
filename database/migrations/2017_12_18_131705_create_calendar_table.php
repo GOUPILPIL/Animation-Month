@@ -16,7 +16,7 @@ class CreateCalendarTable extends Migration
         Schema::create('calendars', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->dateTime('date_calendar');
+            $table->integer('date_calendar');
             $table->longText('content');
             $table->timestamps();
         });

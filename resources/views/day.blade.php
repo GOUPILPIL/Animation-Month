@@ -1,7 +1,7 @@
 @extends('layouts.temhome')
 
 @section('day')
-	@forelse([] as $panier)
+	@forelse($calendars as $calendar)
 		<div class="numbersdiv">
 			<a class="dropdown-item" data-toggle="modal" data-target="#exampleModal2" href="#">1</a>
 		</div>

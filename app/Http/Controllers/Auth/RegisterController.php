@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Calendar;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/calendar';
 
     /**
      * Create a new controller instance.
@@ -62,10 +63,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        for($i = 1; $i <= 24; $i++) {
+            Calendar::create([
+                'user_id' => $user->id,
+                'date_calendar' => $i,
+                'content' => 'ceci est le contenu'
+            ]);
+        }
+
+        return $user;
     }
 }

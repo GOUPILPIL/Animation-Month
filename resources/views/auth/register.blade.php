@@ -62,6 +62,18 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="animation" class="col-md-4 control-label">Animation</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="animation" id="animation">
+                                    <option>rightleft</option>
+                                    <option>rubberBand</option>
+                                    <option>rotateIn</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register

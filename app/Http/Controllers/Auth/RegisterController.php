@@ -77,7 +77,8 @@ class RegisterController extends Controller
             Calendar::create([
                 'user_id' => $user->id,
                 'date_calendar' => $i,
-                'content' => $fact->fact
+                'content' => $fact->fact,
+                'animation' => $data['animation']
             ]);
             $i++;
         }

@@ -2,7 +2,7 @@
 
 @section('day')
 	@forelse($calendars as $calendar)
-		<div class="numbersdiv">
+		<div class="numbersdiv rotateIn">
 			<a class="dropdown-item" data-toggle="modal" data-target="#exampleModal{{ $calendar->id }}" href="#">{{ $calendar->date_calendar }}</a>
 		</div>
 	@empty

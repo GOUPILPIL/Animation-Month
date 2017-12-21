@@ -73,11 +73,16 @@ class RegisterController extends Controller
         $facts = json_decode($facts);
 
         $i = 1;
-        foreach($facts as $fact) {
+        foreach($facts as $fact)
+        {
+            $text = $fact->fact;
+            if(isset($data['joke-'.$i.''])) {
+                $text = $data['joke-'.$i.''];
+            }
             Calendar::create([
                 'user_id' => $user->id,
                 'date_calendar' => $i,
-                'content' => $fact->fact,
+                'content' => $text,
                 'animation' => $data['animation']
             ]);
             $i++;

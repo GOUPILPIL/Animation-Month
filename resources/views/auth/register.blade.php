@@ -74,6 +74,29 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="choice" class="col-md-4 control-label">Choice</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="choice" id="choice">
+                                    <option>Chuck norris</option>
+                                    <option>Mes propres blagues</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="joke-group">
+                            @for($i = 1; $i <= 24; $i++)
+                                <div class="form-group">
+                                    <label for="joke-{{ $i }}" class="col-md-4 control-label">Case {{ $i }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="joke-{{ $i }}" type="text" class="form-control" name="joke-{{ $i }}">
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
